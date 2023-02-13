@@ -5,22 +5,18 @@ import axios from 'axios';
 import {Searchbar} from 'components/Searchbar/Searchbar'
 import { SearchForm } from 'components/SearchForm/SearchForm'
 import MoviesListItem from 'components/MoviesListItem/MoviesListItem'
-import {BASE_URL, MY_KEY, TRENDING_MOVIES} from "Constants/Constants";
+import {BASE_URL, MY_KEY} from "Constants/Constants";
 
 export default function Movies() {
 
   const [search, setSearch] = useState('');
   const [filmList, setFilmList] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [, setSearchParams] = useSearchParams();
 
   const handlSearcPhoto = (search) => {
      setSearch(search.search);
    };
 
-  const updateQueryString = (name) => {
-    
-  };
-  
   useEffect(() => {
     if (!search) {
       return;

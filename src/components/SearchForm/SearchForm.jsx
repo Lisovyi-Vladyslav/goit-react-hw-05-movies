@@ -26,7 +26,6 @@ onSubmit={this.handleSubmit}
     <Input
       type="text"
       name="search"
-    
       placeholder="Search images and photos"
     />
   </Forma>
