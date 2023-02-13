@@ -3,11 +3,11 @@ import axios from 'axios';
 import { useParams, Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { BASE_URL, MY_KEY, MOVIE_DETAILS } from "Constants/Constants";
-import MoviesDetailsAbout from "components/MoviesDetailsAbout/MoviesDetailsAbout"
+import {MoviesDetailsAbout }from "components/MoviesDetailsAbout/MoviesDetailsAbout"
 
 export default function MoviesDetails() {
   const { filmId } = useParams();
-const [filmDetails, setFilmDetails] = useState([]);
+const [filmDetails, setFilmDetails] = useState({});
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "/";
 
@@ -44,3 +44,4 @@ const [filmDetails, setFilmDetails] = useState([]);
     
   );
 };
+

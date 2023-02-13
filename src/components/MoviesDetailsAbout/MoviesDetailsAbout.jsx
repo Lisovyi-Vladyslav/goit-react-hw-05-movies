@@ -1,20 +1,20 @@
 import React from 'react'
+import PropTypes from "prop-types";
 
-export default function MoviesDetailsAbout(filmDetails) {
-  
-  const {original_title, vote_average, vote_count, popularity, genresEl, overview,poster_path} = filmDetails.filmDetails
-    return (
-      <>
-        <div >
-          {poster_path && <img
+export const MoviesDetailsAbout = ({filmDetails}) => {
+  const { original_title, vote_average, vote_count, popularity, genresEl, overview, poster_path } = filmDetails;
+  return (
+    <>
+      <div>
+        {poster_path && <img
           src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt={`Cover of the film ${original_title}`}
+          alt={`Cover of the film ${original_title}`}
           onError={({ currentTarget }) => {
-    currentTarget.onerror = null; // prevents looping
+            currentTarget.onerror = null; // prevents looping
             currentTarget.src = "https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-";
            
-  }}
-          />}
+          }}
+        />}
         
         <div>
           <p >{original_title}</p>
@@ -37,7 +37,7 @@ export default function MoviesDetailsAbout(filmDetails) {
               <li>
                 <p>
                   <span >{vote_average}</span
-                  >/<span 
+                  >/<span
                   >{vote_count}</span
                   >
                 </p>
@@ -61,6 +61,19 @@ export default function MoviesDetailsAbout(filmDetails) {
       <div>
         
       </div>
-      </>
-  )
-}
+    </>
+  );
+};
+
+MoviesDetailsAbout.propTypes = {
+  filmDetails: PropTypes.shape({
+     original_title: PropTypes.string,
+  vote_average: PropTypes.number,
+  vote_count: PropTypes.number,
+  overview: PropTypes.string,
+    genresEl: PropTypes.string,
+  poster_path: PropTypes.string,
+  
+  }),
+  
+};

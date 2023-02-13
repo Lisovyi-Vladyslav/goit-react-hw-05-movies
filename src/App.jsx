@@ -5,7 +5,6 @@ import Movies from "./Pages/Movies/Movies";
 import MoviesDetails from "./Pages/MoviesDetails/MoviesDetails";
 import Review from "./Pages/MoviesDetails/Review/Review";
 import Cast from "./Pages/MoviesDetails/Cast/Cast";
-import NotFound from "./Pages/NotFound/NotFound";
 import SharedLayout from "./Pages/SharedLayout/SharedLayout"
 
 
@@ -21,7 +20,7 @@ export const App = () => {
            <Route path="review" element={<Review />} />
            <Route path="cast" element={<Cast />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Home />} />
       </Route>
     </Routes>
     </>
